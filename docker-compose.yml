@@ -1,0 +1,41 @@
+services:
+  gateway:
+    build:
+      context: .
+      dockerfile: src/Gateway/Dockerfile
+    container_name: gateway
+    ports:
+      - "8080:8080"
+    environment:
+      - ASPNETCORE_URLS=http://+:8080
+    depends_on:
+      - provider1
+      - provider2
+      - provider3
+  provider1:
+    build:
+      context: ./src/Provider.Api1
+      dockerfile: Dockerfile
+    container_name: provider1
+    ports:
+      - "5001:5001"
+    environment:
+      - ASPNETCORE_URLS=http://+:5001
+  provider2:
+    build:
+      context: ./src/Provider.Api2
+      dockerfile: Dockerfile
+    container_name: provider2
+    ports:
+      - "5002:5002"
+    environment:
+      - ASPNETCORE_URLS=http://+:5002
+  provider3:
+    build:
+      context: ./src/Provider.Api3
+      dockerfile: Dockerfile
+    container_name: provider3
+    ports:
+      - "5003:5003"
+    environment:
+      - ASPNETCORE_URLS=http://+:5003
