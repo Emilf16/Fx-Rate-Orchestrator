@@ -1,4 +1,4 @@
-# ExchangeApiBR — Aggregated FX Quotes (ASP.NET Core .NET 9)
+# ExchangeApiBR — Fx Rate Orchestrator (ASP.NET Core .NET 9)
 
 Proyecto de referencia que implementa un API Gateway para cotizaciones de tipo de cambio. El Gateway consulta en paralelo 3 proveedores dummy (formatos heterogéneos JSON/XML), aplica tolerancia a fallos y selecciona la mejor cotización (mayor monto convertido).
 
